@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -53,15 +54,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun registerListeners(){
+        lateinit var mHandler: Handler
+        lateinit var mRunnable: Runnable
         startButton.setOnClickListener{
-            val snack = Snackbar.make(it,"Start button pressed",Snackbar.LENGTH_LONG)
+            val snack = Snackbar.make(it,"Start button pressed",Snackbar.LENGTH_SHORT)
             snack.show()
-
-            Log.i(TAG,playerName.text.toString())
-            val intent = Intent(this, DisplayMessageActivity::class.java).apply{
-                putExtra(USERNAME_EXTRA,playerName.text.toString())
+            mRunnable = Runnable {
+                Log.i(TAG,playerName.text.toString())
+                val intent = Intent(this, DisplayMessageActivity::class.java).apply{
+                    putExtra(USERNAME_EXTRA,playerName.text.toString())
+                }
+                startActivity(intent)
             }
-            startActivity(intent)
+            mHandler = Handler()
+            mHandler.postDelayed(mRunnable, 1000)
         }
     }
 

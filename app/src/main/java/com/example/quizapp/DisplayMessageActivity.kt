@@ -11,7 +11,13 @@ class DisplayMessageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_message)
-        val userName = intent.getStringExtra("USERNAME_EXTRA").toString()
+        val extras = intent.extras;
+        var userName: String
+        if(extras == null) {
+            userName= null.toString();
+        } else {
+            userName = extras.getString("USERNAME_EXTRA").toString()
+        }
         Log.i(TAG,userName)
     }
 }
