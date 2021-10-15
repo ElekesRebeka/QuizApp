@@ -2,4 +2,5 @@
     <string name="app_name">QuizApp</string>
     <string name="get_started_button">GET STARTED</string>
     <string name="input_name">Your name</string>
+    <string name="user_name">The name of the player is:</string>
 </resources>
