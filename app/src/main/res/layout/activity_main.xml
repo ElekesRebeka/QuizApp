@@ -25,7 +25,8 @@
         android:ems="10"
         android:hint="@string/input_name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/contactButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -36,6 +37,18 @@
         android:layout_height="wrap_content"
         android:text="@string/get_started_button"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactButton" />
+
+    <Button
+        android:id="@+id/contactButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/get_contact_button"
+        android:background="@color/light_teal"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playerNameInput" />
