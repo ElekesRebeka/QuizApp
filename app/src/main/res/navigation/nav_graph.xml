@@ -7,16 +7,16 @@
 
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.example.quizapp.ui.quiz.StartFragment"
+        android:name="com.example.quizapp.ui.quiz.QuizStartFragment"
         android:label="fragment_start"
-        tools:layout="@layout/fragment_start" >
+        tools:layout="@layout/fragment_start_quiz" >
         <action
             android:id="@+id/action_startFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
-        android:name="com.example.quizapp.ui.quiz.quizFragment"
+        android:name="com.example.quizapp.ui.quiz.QuizFragment"
         android:label="fragment_quiz"
         tools:layout="@layout/fragment_quiz" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/endQuizFragment"
-        android:name="com.example.quizapp.ui.quiz.endQuizFragment"
+        android:name="com.example.quizapp.ui.quiz.QuizEndFragment"
         android:label="fragment_end_quiz"
         tools:layout="@layout/fragment_end_quiz" >
         <action

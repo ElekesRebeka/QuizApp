@@ -28,13 +28,6 @@ import java.io.InputStream
 import android.widget.Toast
 import android.R.attr.data
 
-
-
-
-
-
-
-
 const  val TAG:String = "MainActivity"
 const  val USERNAME_EXTRA:String = "Username"
 
@@ -76,45 +69,4 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.i(TAG,"onDestroy()")
     }
-
-    var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val intent = result.data
-
-            Log.i(TAG,intent.toString())
-            val textEdit = findViewById<EditText>(R.id.playerNameInput)
-            val editableData = Editable.Factory.getInstance().newEditable(data.toString())
-            textEdit.text = editableData
-        }
-    }
-
-//    private fun registerListeners(){
-//        lateinit var mHandler: Handler
-//        lateinit var mRunnable: Runnable
-//        startButton.setOnClickListener{
-//            val snack = Snackbar.make(it,"Start button pressed",Snackbar.LENGTH_SHORT)
-//            snack.show()
-//            mRunnable = Runnable {
-//                Log.i(TAG,playerName.text.toString())
-//                val intent = Intent(this, DisplayMessageActivity::class.java).apply{
-//                    putExtra(USERNAME_EXTRA,playerName.text.toString())
-//                }
-//                startActivity(intent)
-//            }
-//            mHandler = Handler()
-//            mHandler.postDelayed(mRunnable, 1000)
-//        }
-//
-//        contactButton.setOnClickListener{
-//            val intent = Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI)
-//            //startActivityForResult(intent, 2)
-//            resultLauncher.launch(intent)
-//        }
-//    }
-//
-//    private fun initializeView(){
-//        playerName = findViewById(R.id.playerNameInput)
-//        startButton = findViewById(R.id.startButton)
-//        contactButton = findViewById(R.id.contactButton)
-//    }
 }
