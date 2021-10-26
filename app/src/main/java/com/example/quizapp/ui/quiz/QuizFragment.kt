@@ -1,5 +1,7 @@
 package com.example.quizapp.ui.quiz
 
+import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -18,6 +20,11 @@ import com.example.quizapp.TAG
 import com.example.quizapp.models.Question
 import com.example.quizapp.models.questions
 import com.google.android.material.snackbar.Snackbar
+import androidx.activity.OnBackPressedCallback
+
+import androidx.annotation.NonNull
+import kotlin.system.exitProcess
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -144,6 +151,41 @@ class QuizFragment : Fragment() {
                 }
             }
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val callback: OnBackPressedCallback = object : OnBackPressedCallback(
+            true // default to enabled
+        ) {
+            override fun handleOnBackPressed() {
+                showAreYouSureDialog()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(
+            this,  // LifecycleOwner
+            callback
+        )
+    }
+
+    fun showAreYouSureDialog(){
+        AlertDialog.Builder(activity).apply {
+            setTitle("Exit")
+            setMessage("Are you sure you want to end this quiz?")
+
+            setPositiveButton("Yes") { _, _ ->
+                // if user press yes, then finish the current activity
+                findNavController().navigate(R.id.action_quizFragment_to_endQuizFragment)
+            }
+
+            setNegativeButton("No"){_, _ ->
+                // if user press no, then return the activity
+                Toast.makeText(activity, "Thank you",
+                    Toast.LENGTH_LONG).show()
+            }
+
+            setCancelable(true)
+        }.create().show()
     }
 
     companion object {
