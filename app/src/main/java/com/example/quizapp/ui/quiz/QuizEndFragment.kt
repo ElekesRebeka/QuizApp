@@ -1,15 +1,16 @@
 package com.example.quizapp.ui.quiz
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.quizapp.R
-import com.example.quizapp.TAG
+import com.example.quizapp.ui.quiz.QuizFragment.Companion.correctAnswers
+import com.example.quizapp.ui.quiz.QuizFragment.Companion.numQuestions
 import com.google.android.material.snackbar.Snackbar
 
 // TODO: Rename parameter arguments, choose names that match
@@ -27,6 +28,7 @@ class QuizEndFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var tryAgainButton: Button
+    private lateinit var points: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,12 +58,16 @@ class QuizEndFragment : Fragment() {
         tryAgainButton.setOnClickListener{
             val snack = Snackbar.make(it,"Try again the quiz", Snackbar.LENGTH_SHORT)
             snack.show()
+            correctAnswers = 0
             findNavController().navigate(R.id.action_endQuizFragment_to_startFragment)
         }
     }
 
     private fun initializeView(view: View) {
         tryAgainButton = view.findViewById(R.id.tryAgainButton)
+        points = view.findViewById(R.id.pointView)
+        points.text = "$correctAnswers" + "/$numQuestions points"
+        //points.text = "/ points"
     }
 
     companion object {
