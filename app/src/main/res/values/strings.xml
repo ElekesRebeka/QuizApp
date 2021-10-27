@@ -9,4 +9,5 @@
     <string name="next_question_button">Next question</string>
     <string name="try_again_button">TRY AGAIN</string>
     <string name="result_text">Quiz result</string>
+    <string name="get_image_button">CHOOSE IMAGE</string>
 </resources>

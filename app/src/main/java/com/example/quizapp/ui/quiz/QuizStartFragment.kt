@@ -9,11 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
 import com.example.quizapp.R
 import com.example.quizapp.TAG
 import com.google.android.material.snackbar.Snackbar
 import com.example.quizapp.activityResult.PickContact
+import com.example.quizapp.activityResult.PickImage
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,6 +34,8 @@ class QuizStartFragment : Fragment() {
     private lateinit var playerName: EditText
     private lateinit var startButton: Button
     private lateinit var contactButton: Button
+    private lateinit var imageButton: Button
+    private lateinit var imageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,6 +73,10 @@ class QuizStartFragment : Fragment() {
         }
     }
 
+    private val imageLauncher = registerForActivityResult(PickImage()) {
+        imageView.setImageURI(it)
+    }
+
 
     private fun registerListeners(view: View) {
         startButton.setOnClickListener{
@@ -81,12 +89,18 @@ class QuizStartFragment : Fragment() {
         contactButton.setOnClickListener{
             resultLauncher.launch(0)
         }
+
+        imageButton.setOnClickListener {
+            imageLauncher.launch(0)
+        }
     }
 
     private fun initializeView(view: View) {
         playerName = view.findViewById(R.id.playerNameInput)
         startButton = view.findViewById(R.id.startButton)
         contactButton = view.findViewById(R.id.contactButton)
+        imageButton = view.findViewById(R.id.imageButton)
+        imageView = view.findViewById(R.id.imageView)
     }
 
     companion object {
