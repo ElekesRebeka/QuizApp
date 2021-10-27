@@ -10,4 +10,16 @@
     <string name="try_again_button">TRY AGAIN</string>
     <string name="result_text">Quiz result</string>
     <string name="get_image_button">CHOOSE IMAGE</string>
+    <string name="home">Home</string>
+    <string name="top_app_bar">Quiz app</string>
+    <string name="quiz">Quiz</string>
+    <string name="profile">Profile</string>
+    <string name="list">List of questions</string>
+    <string name="new_question">New question</string>
+    <string name="header_title">Menu options</string>
+    <string name="header_text">Enjoy the quiz</string>
+    <string name="welcome_text">Enjoy the quiz app, where you can:</string>
+    <string name="skills">TEST YOUR SKILLS</string>
+    <string name="read">READ QUESTIONS</string>
+    <string name="create_question">CREATE QUESTION</string>
 </resources>
