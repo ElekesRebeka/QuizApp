@@ -22,4 +22,11 @@
     <string name="skills">TEST YOUR SKILLS</string>
     <string name="read">READ QUESTIONS</string>
     <string name="create_question">CREATE QUESTION</string>
+    <string name="hight_score">Hight score</string>
+    <string name="userName">Username</string>
+    <string name="answer">Answer</string>
+    <string name="answers">Answers</string>
+    <string name="correctAnswer">Correct answer</string>
+    <string name="addQuestion">ADD QUESTION</string>
+    <string name="question">Question</string>
 </resources>

@@ -59,6 +59,8 @@ class MainActivity : AppCompatActivity() {
             when(menuItem.itemId){
                 R.id.home -> findNavController(R.id.nav_host_fragment).navigate(R.id.homeFragment)
                 R.id.quiz -> findNavController(R.id.nav_host_fragment).navigate(R.id.startFragment)
+                R.id.profile -> findNavController(R.id.nav_host_fragment).navigate(R.id.profileFragment)
+                R.id.new_question -> findNavController(R.id.nav_host_fragment).navigate(R.id.questionAddFragment)
             }
 
             drawerLayout.close()
