@@ -200,7 +200,7 @@ class QuizFragment : Fragment() {
 
         var questionIndex = 0
         var correctAnswers = 0
-        const val numQuestions = 3
+        const val numQuestions = 5
 
         // TODO: Rename and change types and number of parameters
         @JvmStatic
