@@ -46,15 +46,6 @@ class MainActivity : AppCompatActivity() {
 
         navigationView.setNavigationItemSelectedListener { menuItem ->
             menuItem.isChecked = true
-//            val transaction = supportFragmentManager.beginTransaction()
-//            when(menuItem.itemId) {
-//                //R.id.home -> findNavController(R.id.nav_host_fragment).navigate(R.id.homeFragment)
-//                //R.id.quiz -> findNavController(R.id.nav_host_fragment).navigate(R.id.startFragment)
-//                R.id.home -> transaction.replace(R.id.nav_host_fragment, HomeFragment())
-//                R.id.quiz -> transaction.replace(R.id.nav_host_fragment, QuizStartFragment())
-//
-//            }
-//            transaction.commit()
 
             when(menuItem.itemId){
                 R.id.home -> findNavController(R.id.nav_host_fragment).navigate(R.id.homeFragment)
